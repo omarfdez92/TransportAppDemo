@@ -38,9 +38,9 @@ public class StarterApplication extends Application {
             .build()
     );
 
-    ParseObject object = new ParseObject("ExampleObject");
-    object.put("myNumber", "123");
-    object.put("myString", "omar");
+    /*ParseObject object = new ParseObject("ExampleObject");
+    object.put("myNumber", "321");
+    object.put("myString", "Omar");
 
     object.saveInBackground(new SaveCallback () {
       @Override
@@ -54,7 +54,7 @@ public class StarterApplication extends Application {
     });
 
 
-    ParseUser.enableAutomaticUser();
+    ParseUser.enableAutomaticUser();*/
 
     ParseACL defaultACL = new ParseACL();
     defaultACL.setPublicReadAccess(true);

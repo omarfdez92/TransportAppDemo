@@ -7,7 +7,9 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 package com.parse.starter;
+import android.annotation.TargetApi;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -25,11 +27,54 @@ import com.parse.SaveCallback;
 
 public class MainActivity extends AppCompatActivity {
 
+  @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
+  public void getStartedBtn(View view){
+
+    Switch userTypeSwitch = (Switch) findViewById(R.id.userTypeSwitch);
+    Log.i("Switch value: ", String.valueOf(userTypeSwitch.isChecked()));
+
+    String userType = "rider";
+
+    if (userTypeSwitch.isChecked()) {
+      userType = "driver";
+    }
+
+    ParseUser.getCurrentUser().put("riderOrDriver", userType);
+
+    Log.i("Info: ", "Redirecting as " + userType);
+
+  }
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+
+    getSupportActionBar().hide();
+
+    if (ParseUser.getCurrentUser() == null) {
+
+      ParseAnonymousUtils.logIn(new LogInCallback() {
+        @Override
+        public void done(ParseUser user, ParseException e) {
+          if (e == null) {
+            Log.i("Info: ", "Anonymous login successfull");
+          }else{
+            Log.i("Info: ", "Anonymous login failed");
+          }
+        }
+      });
+
+    }else{
+
+      if (ParseUser.getCurrentUser().get("riderOrDriver") != null) {
+
+        Log.i("Info: ", "Redirecting as " + ParseUser.getCurrentUser().get("riderOrDriver"));
+
+      }
+
+    }
 
     
     ParseAnalytics.trackAppOpenedInBackground(getIntent());
