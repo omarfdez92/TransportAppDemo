@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v18/values-v18.xml",
+            "map": [
+                {
+                    "source": "/home/qwerty92/.gradle/caches/transforms-2/files-2.1/e33cf2930190606204f4eaa4066ed67a/res/values-v18/values-v18.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "4",
+                        "startOffsets": "276",
+                        "endColumns": "48",
+                        "endOffsets": "320"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "48",
+                        "endOffsets": "99"
+                    }
+                }
+            ]
+        }
+    ]
+}
