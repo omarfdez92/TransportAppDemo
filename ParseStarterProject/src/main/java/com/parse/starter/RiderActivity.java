@@ -45,11 +45,11 @@ public class RiderActivity extends FragmentActivity implements OnMapReadyCallbac
 
     public void callCarpool(View view){
 
-        Log.i("INFOOOOOOO: ","Call Carpool");
+        Log.i("INFOOOOOOO","Call Carpool");
 
         if (requestActive) {
 
-            ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Request");
+            ParseQuery<ParseObject> query = new ParseQuery< >("Request");
             query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
             query.findInBackground(new FindCallback<ParseObject>() {
                 @Override
@@ -89,7 +89,7 @@ public class RiderActivity extends FragmentActivity implements OnMapReadyCallbac
                     request.put("username", ParseUser.getCurrentUser().getUsername());
 
                     ParseGeoPoint parseGeoPoint = new ParseGeoPoint(lastKnownLocation.getLatitude(), lastKnownLocation.getLongitude());
-                    request.put("Location: ", parseGeoPoint);
+                    request.put("Location", parseGeoPoint);
 
                     request.saveInBackground(new SaveCallback() {
                         @Override

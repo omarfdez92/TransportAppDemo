@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
   public void getStartedBtn(View view){
 
     Switch userTypeSwitch = (Switch) findViewById(R.id.userTypeSwitch);
-    Log.i("Switch value: ", String.valueOf(userTypeSwitch.isChecked()));
+    Log.i("Switch value", String.valueOf(userTypeSwitch.isChecked()));
 
     String userType = "rider";
 
@@ -76,11 +76,13 @@ public class MainActivity extends AppCompatActivity {
       ParseAnonymousUtils.logIn(new LogInCallback() {
         @Override
         public void done(ParseUser user, ParseException e) {
+
           if (e == null) {
-            Log.i("Info: ", "Anonymous login successfull");
+            Log.i("Info", "Anonymous login successfull");
           }else{
-            Log.i("Info: ", "Anonymous login failed");
+            Log.i("Info", "Anonymous login failed");
           }
+
         }
       });
 
@@ -88,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
       if (ParseUser.getCurrentUser().get("riderOrDriver") != null) {
 
-        Log.i("Info: ", "Redirecting as " + ParseUser.getCurrentUser().get("riderOrDriver"));
+        Log.i("Info", "Redirecting as " + ParseUser.getCurrentUser().get("riderOrDriver"));
 
         redirectActivity();
 
