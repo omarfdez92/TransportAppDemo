@@ -23,11 +23,15 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
+
+import java.util.List;
 
 public class RiderActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -37,36 +41,69 @@ public class RiderActivity extends FragmentActivity implements OnMapReadyCallbac
     LocationListener locationListener;
 
     Button callCarpoolButton;
+    Boolean requestActive = false;
 
-    public void clickCallCarpool(View v){
+    public void callCarpool(View view){
 
         Log.i("INFOOOOOOO: ","Call Carpool");
 
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+        if (requestActive) {
 
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+            ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Request");
+            query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
+            query.findInBackground(new FindCallback<ParseObject>() {
+                @Override
+                public void done(List<ParseObject> objects, ParseException e) {
 
-            Location lastKnownLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                    if (e == null) {
 
-            if (lastKnownLocation != null) {
+                        if (objects.size() > 0) {
 
-                ParseObject request = new ParseObject("Request");
-                request.put("username", ParseUser.getCurrentUser().getUsername());
+                            for (ParseObject object : objects) {
 
-                ParseGeoPoint parseGeoPoint = new ParseGeoPoint(lastKnownLocation.getLatitude(), lastKnownLocation.getLongitude());
-                request.put("Location: ", parseGeoPoint);
+                                object.deleteInBackground();
 
-                request.saveInBackground(new SaveCallback() {
-                    @Override
-                    public void done(ParseException e) {
-                        if (e == null) {
-                            callCarpoolButton.setText("CANCEL Carpool");
+                            }
+
+                            requestActive = false;
+                            callCarpoolButton.setText("Call a Carpool");
+
                         }
-                    }
-                });
 
-            } else {
-                Toast.makeText(this, "Could not find location. Please try again later.", Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+            });
+
+        } else {
+
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+
+                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+
+                Location lastKnownLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
+                if (lastKnownLocation != null) {
+
+                    final ParseObject request = new ParseObject("Request");
+                    request.put("username", ParseUser.getCurrentUser().getUsername());
+
+                    ParseGeoPoint parseGeoPoint = new ParseGeoPoint(lastKnownLocation.getLatitude(), lastKnownLocation.getLongitude());
+                    request.put("Location: ", parseGeoPoint);
+
+                    request.saveInBackground(new SaveCallback() {
+                        @Override
+                        public void done(ParseException e) {
+                            if (e == null) {
+                                callCarpoolButton.setText("Cancel Carpool");
+                                requestActive = true;
+                            }
+                        }
+                    });
+
+                } else {
+                    Toast.makeText(this, "Could not find location. Please try again later.", Toast.LENGTH_SHORT).show();
+                }
             }
         }
     }
@@ -112,6 +149,26 @@ public class RiderActivity extends FragmentActivity implements OnMapReadyCallbac
         mapFragment.getMapAsync(this);
 
         callCarpoolButton = (Button) findViewById(R.id.callCarpoolButton);
+
+        ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Request");
+        query.whereEqualTo("username", ParseUser.getCurrentUser().getUsername());
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> objects, ParseException e) {
+
+                if (e == null) {
+
+                    if (objects.size() > 0) {
+
+                        requestActive = true;
+                        callCarpoolButton.setText("Cancel Carpool");
+
+                    }
+
+                }
+
+            }
+        });
 
     }
 
