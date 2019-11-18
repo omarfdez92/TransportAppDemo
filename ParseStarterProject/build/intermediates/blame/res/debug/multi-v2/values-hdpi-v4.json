@@ -4,16 +4,8 @@
             "outputFile": "/home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
-                    "source": "/home/qwerty92/.gradle/caches/transforms-2/files-2.1/e33cf2930190606204f4eaa4066ed67a/res/values-hdpi/values-hdpi.xml",
+                    "source": "/home/qwerty92/.gradle/caches/transforms-2/files-2.1/dabca018f823e0b76cb4e03aca926c86/res/values-hdpi-v4/values-hdpi-v4.xml",
                     "from": {
-                        "startLines": "4",
-                        "startColumns": "4",
-                        "startOffsets": "282",
-                        "endLines": "8",
-                        "endColumns": "13",
-                        "endOffsets": "554"
-                    },
-                    "to": {
                         "startLines": "2",
                         "startColumns": "4",
                         "startOffsets": "55",

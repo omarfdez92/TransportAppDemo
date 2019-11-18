@@ -27,6 +27,17 @@ import com.parse.SaveCallback;
 
 public class MainActivity extends AppCompatActivity {
 
+  public void redirectActivity() {
+
+    if (ParseUser.getCurrentUser().get("riderOrDriver").equals("rider")) {
+
+      Intent intent = new Intent(getApplicationContext(), RiderActivity.class);
+      startActivity(intent);
+
+    }
+
+  }
+
   @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
   public void getStartedBtn(View view){
 
@@ -41,7 +52,14 @@ public class MainActivity extends AppCompatActivity {
 
     ParseUser.getCurrentUser().put("riderOrDriver", userType);
 
-    Log.i("Info: ", "Redirecting as " + userType);
+    ParseUser.getCurrentUser().saveInBackground(new SaveCallback() {
+      @Override
+      public void done(ParseException e) {
+        redirectActivity();
+      }
+    });
+
+    redirectActivity();
 
   }
 
@@ -71,6 +89,8 @@ public class MainActivity extends AppCompatActivity {
       if (ParseUser.getCurrentUser().get("riderOrDriver") != null) {
 
         Log.i("Info: ", "Redirecting as " + ParseUser.getCurrentUser().get("riderOrDriver"));
+
+        redirectActivity();
 
       }
 

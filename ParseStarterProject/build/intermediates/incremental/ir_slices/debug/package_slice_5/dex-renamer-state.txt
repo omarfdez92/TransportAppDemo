@@ -1,4 +1,4 @@
-#Sun Nov 17 11:19:04 CST 2019
+#Mon Nov 18 01:52:25 CST 2019
 base.0=/home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/build/intermediates/transforms/dexMerger/debug/5
 path.0=classes.dex
 renamed.0=classes.dex
