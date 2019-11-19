@@ -2,6 +2,7 @@ package com.parse.starter;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -12,6 +13,8 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -28,8 +31,11 @@ import java.util.List;
 public class ViewRequestsActivity extends AppCompatActivity {
 
     ListView requestListView;
-    ArrayList<String> request = new ArrayList<String>();
+    ArrayList<String> requests = new ArrayList<String>();
     ArrayAdapter arrayAdapter;
+
+    ArrayList<Double> requestLatitudes = new ArrayList<Double>();
+    ArrayList<Double> requestLongitudes = new ArrayList<Double>();
 
     LocationManager locationManager;
     LocationListener locationListener;
@@ -37,8 +43,6 @@ public class ViewRequestsActivity extends AppCompatActivity {
     public void updateListViewMethod(Location location) {
 
         if (location != null) {
-
-            request.clear();
 
             ParseQuery<ParseObject> query = ParseQuery.getQuery("Request");
             final ParseGeoPoint geoPointLocation = new ParseGeoPoint(location.getLatitude(), location.getLongitude());
@@ -51,23 +55,36 @@ public class ViewRequestsActivity extends AppCompatActivity {
 
                     if (e == null) {
 
+                        requests.clear();
+                        requestLongitudes.clear();
+                        requestLatitudes.clear();
+
                         if (objects.size() > 0) {
 
                             for (ParseObject object : objects) {
 
-                                //get distance in km
-                                Double distanceInKilometers = geoPointLocation.distanceInKilometersTo((ParseGeoPoint) object.get("Location"));
-                                //Convert to decimal place, i.e: if 1.3513 then we convert like 13.513 we give a decimal place
-                                Double distanceOneDP = (double) Math.round(distanceInKilometers * 10) / 10;
+                                ParseGeoPoint requestLocation = (ParseGeoPoint) object.get("Location");
 
-                                request.add(distanceOneDP.toString() + " kilometers");
+                                if (requestLocation != null) {
+
+                                    //get distance in km
+                                    Double distanceInKilometers = geoPointLocation.distanceInKilometersTo(requestLocation);
+                                    //Convert to decimal place, i.e: if 1.3513 then we convert like 13.513 we give a decimal place
+                                    Double distanceOneDP = (double) Math.round(distanceInKilometers * 10) / 10;
+
+                                    requests.add(distanceOneDP.toString() + " kilometers");
+
+                                    requestLatitudes.add(requestLocation.getLatitude());
+                                    requestLongitudes.add(requestLocation.getLongitude());
+
+                                }
 
                             }
 
                         } else {
 
                             //not nearby request
-                            request.add("No active requests nearby");
+                            requests.add("No active requests nearby");
 
                         }
 
@@ -114,13 +131,37 @@ public class ViewRequestsActivity extends AppCompatActivity {
 
         requestListView = (ListView) findViewById(R.id.requestListView);
 
-        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, request);
+        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, requests);
 
-        request.clear();
+        requests.clear();
 
-        request.add("Getting nearby request...");
+        requests.add("Getting nearby request...");
 
         requestListView.setAdapter(arrayAdapter);
+
+        requestListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                if (Build.VERSION.SDK_INT < 23 || ContextCompat.checkSelfPermission(ViewRequestsActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+
+                    Location lastKnownLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
+                    if (requestLatitudes.size() > i && requestLongitudes.size() > i  && lastKnownLocation != null) {
+
+                        Intent intent = new Intent(getApplicationContext(), DriverLocationActivity.class);
+                        intent.putExtra("requestLatitude", requestLatitudes.get(i));
+                        intent.putExtra("requestLongitude", requestLongitudes.get(i));
+                        intent.putExtra("driverLatitude", lastKnownLocation.getLatitude());
+                        intent.putExtra("driverLongitude", lastKnownLocation.getLongitude());
+                        startActivity(intent);
+
+                    }
+
+                }
+
+            }
+        });
 
         locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
