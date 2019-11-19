@@ -996,6 +996,7 @@ id line3
 id listMode
 id list_item
 id loading_indicator
+id logOutButton
 id logo_only
 id main_container
 id map
@@ -1033,6 +1034,7 @@ id progressBar
 id progress_circular
 id progress_horizontal
 id radio
+id requestListView
 id rfc822
 id right
 id route_name
@@ -1144,6 +1146,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout activity_main
 layout activity_rider2
+layout activity_view_requests
 layout cast_expanded_controller_activity
 layout cast_help_text
 layout cast_intro_overlay
