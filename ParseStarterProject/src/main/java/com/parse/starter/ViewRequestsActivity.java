@@ -36,6 +36,7 @@ public class ViewRequestsActivity extends AppCompatActivity {
 
     ArrayList<Double> requestLatitudes = new ArrayList<Double>();
     ArrayList<Double> requestLongitudes = new ArrayList<Double>();
+    ArrayList<String> usernames = new ArrayList<String>();
 
     LocationManager locationManager;
     LocationListener locationListener;
@@ -76,6 +77,7 @@ public class ViewRequestsActivity extends AppCompatActivity {
 
                                     requestLatitudes.add(requestLocation.getLatitude());
                                     requestLongitudes.add(requestLocation.getLongitude());
+                                    usernames.add(object.getString("username"));
 
                                 }
 
@@ -147,13 +149,14 @@ public class ViewRequestsActivity extends AppCompatActivity {
 
                     Location lastKnownLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 
-                    if (requestLatitudes.size() > i && requestLongitudes.size() > i  && lastKnownLocation != null) {
+                    if (requestLatitudes.size() > i && requestLongitudes.size() > i && usernames.size() > i && lastKnownLocation != null) {
 
                         Intent intent = new Intent(getApplicationContext(), DriverLocationActivity.class);
                         intent.putExtra("requestLatitude", requestLatitudes.get(i));
                         intent.putExtra("requestLongitude", requestLongitudes.get(i));
                         intent.putExtra("driverLatitude", lastKnownLocation.getLatitude());
                         intent.putExtra("driverLongitude", lastKnownLocation.getLongitude());
+                        intent.putExtra("username", usernames.get(i));
                         startActivity(intent);
 
                     }

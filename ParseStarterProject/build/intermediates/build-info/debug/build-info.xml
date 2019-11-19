@@ -5,25 +5,28 @@
     build-mode="COLD"
     density="xxhdpi"
     format="10"
-    ir-eligibility="COMPATIBLE"
+    ir-eligibility="R_CLASS_CHANGE"
     plugin-version="3.4.2"
-    timestamp="1574148035445"
+    timestamp="1574151440037"
     token="1618908131904633541"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="172" />
+        duration="245" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="18" />
+        duration="28" />
     <task
         name="verifier"
-        duration="1" />
+        duration="18" />
 
+    <artifact
+        location="/home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/build/intermediates/resources/instant-run/debug/resources-debug.apk"
+        type="SPLIT" />
     <artifact
         location="/home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/build/intermediates/split-apk/debug/slices/slice_0.apk"
         type="SPLIT" />
@@ -75,9 +78,27 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1574148035445"
+        ir-eligibility="CLASS_ADDED"
+        timestamp="1574151124901"
         verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="R_CLASS_CHANGE"
+        timestamp="1574151440037"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/build/intermediates/resources/instant-run/debug/resources-debug.apk"
+            type="SPLIT" />
         <artifact
             location="/home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/build/intermediates/split-apk/debug/slices/slice_0.apk"
             type="SPLIT" />
