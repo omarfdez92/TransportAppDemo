@@ -3506,7 +3506,7 @@ public final class R {
     public static final int logo_only=0x7f080085;
     public static final int main_container=0x7f080086;
     public static final int map=0x7f080087;
-    public static final int mapRelativeLayout=0x7f080088;
+    public static final int mapConstraintLayout=0x7f080088;
     public static final int match_global_nicknames=0x7f080089;
     public static final int match_parent=0x7f08008a;
     public static final int media_actions=0x7f08008b;

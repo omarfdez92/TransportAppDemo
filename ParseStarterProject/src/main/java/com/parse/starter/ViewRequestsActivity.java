@@ -31,17 +31,17 @@ import java.util.List;
 public class ViewRequestsActivity extends AppCompatActivity {
 
     ListView requestListView;
-    ArrayList<String> requests = new ArrayList<String>();
+    ArrayList<String> requests = new ArrayList<>();
     ArrayAdapter arrayAdapter;
 
-    ArrayList<Double> requestLatitudes = new ArrayList<Double>();
-    ArrayList<Double> requestLongitudes = new ArrayList<Double>();
-    ArrayList<String> usernames = new ArrayList<String>();
+    ArrayList<Double> requestLatitudes = new ArrayList<>();
+    ArrayList<Double> requestLongitudes = new ArrayList<>();
+    ArrayList<String> usernames = new ArrayList<>();
 
     LocationManager locationManager;
     LocationListener locationListener;
 
-    public void updateListViewMethod(Location location) {
+    public void updateListView(Location location) {
 
         if (location != null) {
 
@@ -49,6 +49,7 @@ public class ViewRequestsActivity extends AppCompatActivity {
             final ParseGeoPoint geoPointLocation = new ParseGeoPoint(location.getLatitude(), location.getLongitude());
 
             query.whereNear("Location", geoPointLocation);
+            query.whereDoesNotExist("driverUsername");
             query.setLimit(10);
             query.findInBackground(new FindCallback<ParseObject>() {
                 @Override
@@ -117,7 +118,7 @@ public class ViewRequestsActivity extends AppCompatActivity {
 
                     Location lastKnownLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 
-                    updateListViewMethod(lastKnownLocation);
+                    updateListView(lastKnownLocation);
                 }
             }
         }
@@ -172,7 +173,7 @@ public class ViewRequestsActivity extends AppCompatActivity {
             @Override
             public void onLocationChanged(Location location) {
 
-                updateListViewMethod(location);
+                updateListView(location);
 
             }
 
@@ -210,7 +211,7 @@ public class ViewRequestsActivity extends AppCompatActivity {
 
                 if (lastKnownLocation != null) {
 
-                    updateListViewMethod(lastKnownLocation);
+                    updateListView(lastKnownLocation);
 
                 }
 

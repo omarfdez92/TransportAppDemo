@@ -14,6 +14,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
@@ -27,6 +28,7 @@ import com.parse.SaveCallback;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class DriverLocationActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -61,6 +63,13 @@ public class DriverLocationActivity extends FragmentActivity implements OnMapRea
                                                         + intent.getDoubleExtra("driverLongitude",0) + "&daddr="
                                                         + intent.getDoubleExtra("requestLatitude",0) + ","
                                                         + intent.getDoubleExtra("requestLongitude",0) ));
+                                        /*uri = String.format(Locale.ENGLISH, "http://maps.google.com/maps?saddr=%f,%f(%s)&daddr=%f,%f (%s)",
+                                                intent.getDoubleExtra("driverLatitude",0),
+                                                intent.getDoubleExtra("driverLongitude",0), "You Location",
+                                                intent.getDoubleExtra("requestLatitude",0) ,
+                                                intent.getDoubleExtra("requestLongitude",0), "Request Location");
+                                        Intent directionsIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                                        intent.setPackage("com.google.android.apps.maps");*/
                                         startActivity(directionsIntent);
 
                                     }
@@ -91,16 +100,23 @@ public class DriverLocationActivity extends FragmentActivity implements OnMapRea
 
         ConstraintLayout mapLayout = (ConstraintLayout) findViewById(R.id.mapConstraintLayout);
         mapLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+
             @Override
             public void onGlobalLayout() {
-
-                ArrayList<Marker> markers = new ArrayList<Marker>();
 
                 LatLng driverLocation = new LatLng(intent.getDoubleExtra("driverLatitude",0), intent.getDoubleExtra("driverLongitude",0));
                 LatLng requestLocation = new LatLng(intent.getDoubleExtra("requestLatitude",0), intent.getDoubleExtra("requestLongitude",0));
 
-                markers.add(mMap.addMarker(new MarkerOptions().position(driverLocation).title("Your Location")));
-                markers.add(mMap.addMarker(new MarkerOptions().position(requestLocation).title("Request Location")));
+                ArrayList<Marker> markers = new ArrayList<>();
+
+                markers.add(mMap.addMarker(new MarkerOptions()
+                        .position(driverLocation)
+                        .title("Your Location")));
+
+                markers.add(mMap.addMarker(new MarkerOptions()
+                        .position(requestLocation)
+                        .title("Request Location")
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))));
 
                 //first calculate the bounds of all the markers like so
                 LatLngBounds.Builder builder = new LatLngBounds.Builder();
@@ -110,11 +126,10 @@ public class DriverLocationActivity extends FragmentActivity implements OnMapRea
                 LatLngBounds bounds = builder.build();
 
                 //Then obtain a movement description object by using the factory: CameraUpdateFactory
-                int padding = 30; // offset from edges of the map in pixels
+                int padding = 60; // offset from edges of the map in pixels
                 CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
 
-                //Finally move the map
-                mMap.moveCamera(cu);
+                mMap.animateCamera(cu);
             }
         });
 
