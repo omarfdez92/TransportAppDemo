@@ -1,10 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:2:1-48:12
-INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:2:1-48:12
-INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:2:1-48:12
-INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:2:1-48:12
-MERGED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:2:1-48:12
+ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:2:1-56:12
 MERGED from [com.android.support:multidex:1.0.3] /home/qwerty92/.gradle/caches/transforms-2/files-2.1/69478cabdc77e13d6a4b00735c516954/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services:9.4.0] /home/qwerty92/.gradle/caches/transforms-2/files-2.1/e9ecc3caace3dcf8a5ff21cf6291df04/AndroidManifest.xml:2:1-6:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/qwerty92/.gradle/caches/transforms-2/files-2.1/f6760441522fbd64afe16d6226471395/AndroidManifest.xml:2:1-11:12
@@ -62,28 +61,25 @@ MERGED from [com.google.android.gms:play-services-basement:9.4.0] /home/qwerty92
 MERGED from [com.android.support:animated-vector-drawable:23.4.0] /home/qwerty92/.gradle/caches/transforms-2/files-2.1/62ca83418bb5da1a1a6fbffa914fe81b/AndroidManifest.xml:2:1-9:12
 MERGED from [com.android.support:support-vector-drawable:23.4.0] /home/qwerty92/.gradle/caches/transforms-2/files-2.1/f101ccae3793e913d0df268a45ee9ef6/AndroidManifest.xml:2:1-9:12
 MERGED from [com.android.support:support-v4:23.4.0] /home/qwerty92/.gradle/caches/transforms-2/files-2.1/feadf34cc6e0408160e5ec24a114c83e/AndroidManifest.xml:17:1-24:12
-INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/debug/AndroidManifest.xml:2:1-31:12
-INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/debug/AndroidManifest.xml:2:1-31:12
-INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/debug/AndroidManifest.xml:2:1-31:12
+INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:2:1-56:12
 	package
 		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:3:5-32
 		INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml
-		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:3:5-32
-		INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/debug/AndroidManifest.xml
+		INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml
-		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:2:1-48:12
-		INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/debug/AndroidManifest.xml
+		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:2:1-56:12
+		INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml
-		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:2:1-48:12
-		INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/debug/AndroidManifest.xml
+		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:2:1-56:12
+		INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.ACCESS_FINE_LOCATION
 ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:10:5-79
-MERGED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:10:5-79
-MERGED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:10:5-79
 	android:name
 		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:10:22-76
 uses-permission#android.permission.INTERNET
@@ -141,9 +137,7 @@ ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterPro
 	android:name
 		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:13:22-77
 application
-ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:15:5-46:19
-MERGED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:15:5-46:19
-MERGED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:15:5-46:19
+ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:15:5-54:19
 MERGED from [com.google.android.gms:play-services:9.4.0] /home/qwerty92/.gradle/caches/transforms-2/files-2.1/e9ecc3caace3dcf8a5ff21cf6291df04/AndroidManifest.xml:5:5-20
 MERGED from [com.google.android.gms:play-services:9.4.0] /home/qwerty92/.gradle/caches/transforms-2/files-2.1/e9ecc3caace3dcf8a5ff21cf6291df04/AndroidManifest.xml:5:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/qwerty92/.gradle/caches/transforms-2/files-2.1/f6760441522fbd64afe16d6226471395/AndroidManifest.xml:9:5-20
@@ -240,23 +234,16 @@ MERGED from [com.android.support:support-v4:23.4.0] /home/qwerty92/.gradle/cache
 MERGED from [com.android.support:support-v4:23.4.0] /home/qwerty92/.gradle/caches/transforms-2/files-2.1/feadf34cc6e0408160e5ec24a114c83e/AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:19:9-41
-		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:19:9-41
 	android:icon
-		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:18:9-43
 		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:18:9-43
 	android:allowBackup
 		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:17:9-35
-		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:17:9-35
 	android:theme
-		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:20:9-40
 		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:20:9-40
 	android:name
 		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:16:9-43
-		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:16:9-43
 meta-data#com.google.android.geo.API_KEY
 ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:30:9-32:55
-MERGED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:30:9-32:55
-MERGED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:30:9-32:55
 	android:value
 		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:32:13-52
 	android:name
@@ -268,21 +255,31 @@ ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterPro
 	android:name
 		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:35:13-42
 activity#com.parse.starter.MainActivity
-ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:37:9-45:20
+ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:38:9-46:20
 	android:label
-		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:39:13-45
+		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:40:13-45
 	android:name
-		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:38:13-41
+		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:39:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:40:13-44:29
+ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:41:13-45:29
 action#android.intent.action.MAIN
-ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:41:17-69
+ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:42:17-69
 	android:name
-		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:41:25-66
+		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:42:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:43:17-77
+ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:44:17-77
 	android:name
-		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:43:27-74
+		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:44:27-74
+activity#com.parse.starter.DriverLocationActivity
+ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:48:9-50:80
+	android:label
+		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:50:13-67
+	android:name
+		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:49:13-51
+activity#com.parse.starter.ViewRequestsActivity
+ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:52:9-58
+	android:name
+		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml:52:19-55
 uses-sdk
 INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml
@@ -401,26 +398,18 @@ MERGED from [com.android.support:support-vector-drawable:23.4.0] /home/qwerty92/
 MERGED from [com.android.support:support-vector-drawable:23.4.0] /home/qwerty92/.gradle/caches/transforms-2/files-2.1/f101ccae3793e913d0df268a45ee9ef6/AndroidManifest.xml:5:5-43
 MERGED from [com.android.support:support-v4:23.4.0] /home/qwerty92/.gradle/caches/transforms-2/files-2.1/feadf34cc6e0408160e5ec24a114c83e/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:23.4.0] /home/qwerty92/.gradle/caches/transforms-2/files-2.1/feadf34cc6e0408160e5ec24a114c83e/AndroidManifest.xml:20:5-43
-INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/debug/AndroidManifest.xml
-INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/debug/AndroidManifest.xml
+INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml
+INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml
 	tools:overrideLibrary
 		ADDED from [com.android.support:appcompat-v7:23.4.0] /home/qwerty92/.gradle/caches/transforms-2/files-2.1/dabca018f823e0b76cb4e03aca926c86/AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
 		INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml
-		INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/debug/AndroidManifest.xml
+		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml
+		INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml
 	android:minSdkVersion
 		INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml
-		INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/debug/AndroidManifest.xml
-activity#com.parse.starter.DriverLocationActivity
-ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/debug/AndroidManifest.xml:25:9-27:79
-	android:label
-		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/debug/AndroidManifest.xml:27:13-67
-	android:name
-		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/debug/AndroidManifest.xml:26:13-68
-activity#com.parse.starter.ViewRequestsActivity
-ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/debug/AndroidManifest.xml:28:9-75
-	android:name
-		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/debug/AndroidManifest.xml:28:19-72
+		ADDED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml
+		INJECTED from /home/qwerty92/AndroidStudioProjects/TransportAppDemo/ParseStarterProject/src/main/AndroidManifest.xml
 uses-feature#0x00020000
 ADDED from [com.google.android.gms:play-services-maps:9.4.0] /home/qwerty92/.gradle/caches/transforms-2/files-2.1/c845035dde1c5df9e111cb1fb6a9f85f/AndroidManifest.xml:22:5-24:33
 	android:glEsVersion

@@ -53,10 +53,6 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name="com.parse.starter.DriverLocationActivity"
-            android:label="@string/title_activity_driver_location" />
-        <activity android:name="com.parse.starter.ViewRequestsActivity" />
-        <activity
             android:name="com.parse.starter.RiderActivity"
             android:label="@string/title_activity_rider" />
         <activity
@@ -68,6 +64,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.parse.starter.DriverLocationActivity"
+            android:label="@string/title_activity_driver_location" />
+        <activity android:name="com.parse.starter.ViewRequestsActivity" />
 
         <receiver android:name="com.google.android.gms.cast.framework.media.MediaIntentReceiver" />
 

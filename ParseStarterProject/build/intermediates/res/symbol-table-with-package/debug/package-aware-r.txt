@@ -982,6 +982,7 @@ id image
 id imageView2
 id index_entity_types
 id info
+id infoTextView
 id instant_message
 id intent_action
 id intent_activity

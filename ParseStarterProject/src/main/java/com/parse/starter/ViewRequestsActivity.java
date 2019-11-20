@@ -24,6 +24,7 @@ import com.parse.ParseException;
 import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -153,11 +154,13 @@ public class ViewRequestsActivity extends AppCompatActivity {
                     if (requestLatitudes.size() > i && requestLongitudes.size() > i && usernames.size() > i && lastKnownLocation != null) {
 
                         Intent intent = new Intent(getApplicationContext(), DriverLocationActivity.class);
+
                         intent.putExtra("requestLatitude", requestLatitudes.get(i));
                         intent.putExtra("requestLongitude", requestLongitudes.get(i));
                         intent.putExtra("driverLatitude", lastKnownLocation.getLatitude());
                         intent.putExtra("driverLongitude", lastKnownLocation.getLongitude());
                         intent.putExtra("username", usernames.get(i));
+
                         startActivity(intent);
 
                     }
@@ -174,6 +177,10 @@ public class ViewRequestsActivity extends AppCompatActivity {
             public void onLocationChanged(Location location) {
 
                 updateListView(location);
+
+                ParseUser.getCurrentUser().put("Location", new ParseGeoPoint(location.getLatitude(),location.getLongitude()));
+
+                ParseUser.getCurrentUser().saveInBackground();
 
             }
 

@@ -34,6 +34,7 @@ public class DriverLocationActivity extends FragmentActivity implements OnMapRea
 
     private GoogleMap mMap;
     Intent intent;
+//    String uri;
 
 
     public void acceptRequest(View view) {
